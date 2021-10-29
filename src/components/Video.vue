@@ -39,7 +39,7 @@ export default {
             let token = localStorage.getItem("token_access");
             let userId = jwt_decode(token).user_id.toString();
             
-            axios.get(`https://camaras-be-app.herokuapp.com//user/${userId}/`, {headers: {'Authorization': `Bearer ${token}`}})
+            axios.get(`https://camaras-be-app.herokuapp.com/user/${userId}/`, {headers: {'Authorization': `Bearer ${token}`}})
                 .then((result) => {
                     this.name = result.data.name;
                     this.email = result.data.email;	
@@ -52,7 +52,7 @@ export default {
         },
 
         verifyToken: function () {
-            return axios.post("https://camaras-be-app.herokuapp.com//refresh/", {refresh: localStorage.getItem("token_refresh")}, {headers: {}})
+            return axios.post("https://camaras-be-app.herokuapp.com/refresh/", {refresh: localStorage.getItem("token_refresh")}, {headers: {}})
 				.then((result) => {
 					localStorage.setItem("token_access", result.data.access);		
 				})
