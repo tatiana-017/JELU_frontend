@@ -4,6 +4,7 @@ import App from './App.vue';
 import LogIn from './components/LogIn.vue'
 import SignUp from './components/SignUp.vue'
 import Home from './components/Home.vue'
+import Account from './components/Video.vue'
 
 const routes = [{
     path: '/',
@@ -24,6 +25,11 @@ const routes = [{
     path: '/user/home',
     name: "home",
     component: Home
+},
+{
+    path: '/user/video',
+    name: "video",
+    component: Video
 }
 
 ];

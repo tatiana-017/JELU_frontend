@@ -9,6 +9,7 @@
         <button v-if="!is_auth" v-on:click="loadLogIn" > Iniciar Sesión </button>
         <button v-if="!is_auth" v-on:click="loadSignUp" > Registrarse </button>
         <button v-if="is_auth" v-on:click="loadHome"> Inicio </button>
+        <button v-if="is_auth" v-on:click="loadVideo"> Cuenta </button>
       </nav>
     </div>
 
@@ -81,6 +82,9 @@ export default {
       localStorage.clear();
       alert("Sesión Cerrada");
       this.verifyAuth();
+    },
+    loadVideo: function () {
+      this.$router.push({ name: "video" });
     },
   },
 
